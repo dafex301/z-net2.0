@@ -1,5 +1,4 @@
 import Logo from "@/components/Logo";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -8,7 +7,7 @@ export default function Footer() {
       <Link href="/">
         <Logo width={90} />
       </Link>
-      <p>Coba-coba sama Fahrel</p>
+      <p>Kegiatan gabut Fahrel</p>
     </div>
   );
 }

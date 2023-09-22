@@ -25,7 +25,7 @@ export default async function Courses() {
                 key={course.id}
                 title={course.title}
                 description={course.description}
-                href={course.slug}
+                href={course.href}
                 image={course.image}
               />
             ))}
