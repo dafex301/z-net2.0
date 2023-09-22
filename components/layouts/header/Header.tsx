@@ -1,0 +1,15 @@
+import Logo from "@/components/Logo";
+import Link from "next/link";
+import NavLink from "./NavLink";
+
+export default function Header() {
+  return (
+    <div className="flex bg-purple-800 text-white p-5 border-b-4 border-yellow-500 gap-8 items-center">
+      <Link href="/">
+        <Logo type="light" />
+      </Link>
+      <NavLink href="/">Beranda</NavLink>
+      <NavLink href="/classes">Kelas</NavLink>
+    </div>
+  );
+}
