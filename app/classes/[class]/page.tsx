@@ -89,15 +89,18 @@ export default function Course({ params }: { params: { class: string } }) {
       </h1>
       <div className="grid grid-cols-12 gap-8 mt-5">
         <div className="col-span-3 bg-white rounded-2xl shadow-md p-8">
-          <h2>Table of Contents</h2>
+          <h2>List Konten</h2>
           <Tree data={treeData} />
         </div>
         <div className="col-span-9 bg-white rounded-2xl shadow-md p-8">
-          <ContentCard
-            title={"Content"}
-            description={"WKWK"}
-            image={"/coding.jpg"}
-          />
+          <ContentCard title={"Content"} image={"/coding.jpg"}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+            incidunt eius quos sit voluptatum quidem enim nostrum perspiciatis a
+            ab! Vero iusto vitae, rem odit minus voluptate doloremque reiciendis
+            debitis numquam consequuntur pariatur sapiente repudiandae velit a
+            dolor, id et dicta laboriosam accusantium magnam ex quidem? Numquam
+            est porro corporis.
+          </ContentCard>
         </div>
       </div>
     </div>

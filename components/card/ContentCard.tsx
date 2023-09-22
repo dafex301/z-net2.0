@@ -2,20 +2,22 @@ import Image from "next/image";
 
 interface ContentCardProps {
   title: string;
-  description: string;
+  children: React.ReactNode;
   image: string;
 }
 
-export default function ContentCard(props: ContentCardProps) {
+export default function ContentCard({
+  title,
+  children,
+  image,
+}: ContentCardProps) {
   return (
     <div>
-      <div className="mb-12 space-y-4">
-        <h3 className="text-2xl font-semibold text-purple-700">
-          {props.title}
-        </h3>
+      <div className=" space-y-4">
+        <h3 className="text-2xl font-semibold text-purple-700">{title}</h3>
         <div className="bg-purple-600 h-72 rounded-xl">
           <Image
-            src={props.image}
+            src={image}
             className="h-full w-full object-cover rounded-xl"
             alt="illustration"
             loading="lazy"
@@ -23,7 +25,15 @@ export default function ContentCard(props: ContentCardProps) {
             height={600}
           />
         </div>
-        <p className="mb-6">{props.description}</p>
+        <p className="text-justify">{children}</p>
+        <div className="flex gap-3">
+          <button className="text-lg bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-full w-full">
+            Belajar
+          </button>
+          <button className="text-lg bg-purple-600 hover:bg-purple-800 text-white py-3 rounded-full w-full">
+            Latihan
+          </button>
+        </div>
       </div>
     </div>
   );
