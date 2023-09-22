@@ -1,5 +1,5 @@
-import TreeComponent from "@/components/tree/TreeComponent";
-import Tree from "@/components/tree/TreeNode3";
+import ContentCard from "@/components/card/ContentCard";
+import Tree from "@/components/tree/Tree";
 
 interface TreeNodeData {
   id: number;
@@ -88,12 +88,16 @@ export default function Course({ params }: { params: { class: string } }) {
         {params.class.toUpperCase()}
       </h1>
       <div className="grid grid-cols-12 gap-8 mt-5">
-        <div className="col-span-4 bg-white rounded-2xl shadow-md px-8 py-12 sm:px-12 lg:px-8">
-          {/* <Tree data={treeData} /> */}
+        <div className="col-span-3 bg-white rounded-2xl shadow-md p-8">
+          <h2>Table of Contents</h2>
           <Tree data={treeData} />
         </div>
-        <div className="col-span-8 bg-white rounded-2xl shadow-md px-8 py-12 sm:px-12 lg:px-8">
-          Content
+        <div className="col-span-9 bg-white rounded-2xl shadow-md p-8">
+          <ContentCard
+            title={"Content"}
+            description={"WKWK"}
+            image={"/coding.jpg"}
+          />
         </div>
       </div>
     </div>
