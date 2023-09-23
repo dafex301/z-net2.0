@@ -1,16 +1,12 @@
 import Image from "next/image";
 
-interface ContentCardProps {
+interface SkillCardProps {
   title: string;
   children: React.ReactNode;
   image: string;
 }
 
-export default function ContentCard({
-  title,
-  children,
-  image,
-}: ContentCardProps) {
+export default function SkillCard({ title, children, image }: SkillCardProps) {
   return (
     <div>
       <div className=" space-y-4">

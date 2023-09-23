@@ -1,79 +1,62 @@
-import ContentCard from "@/components/card/ContentCard";
-import ClassCards from "@/components/class/ClassContentCards";
+import ContentCard from "@/components/card/SkillCard";
+import TreeSkillCards from "@/components/class/TreeSkillCards";
 import Tree from "@/components/tree/Tree";
-
-interface TreeNodeData {
-  id: string;
-  title: string;
-  children: TreeNodeData[];
-  parent_id: string | null;
-}
+import { TreeNodeData } from "@/components/tree/TreeNode";
 
 const treeData: TreeNodeData[] = [
   {
-    id: "1",
-    parent_id: null,
-    title: "Parent 1",
+    id: "evolution-basics",
+    title: "Evolution Basics",
     children: [
       {
-        id: "3",
-        parent_id: "1",
-        title: "Children 1",
+        id: "natural-selection",
+        title: "Natural Selection",
         children: [],
       },
       {
-        id: "4",
-        parent_id: "1",
-        title: "Children 2",
+        id: "genetic-drift",
+        title: "Genetic Drift",
         children: [
           {
-            id: "5",
-            parent_id: "4",
-            title: "Grandchildren 1",
+            id: "bottleneck-effect",
+            title: "Bottleneck Effect",
             children: [],
           },
           {
-            id: "6",
-            parent_id: "4",
-            title: "Grandchildren 2",
+            id: "founder-effect",
+            title: "Founder Effect",
             children: [],
           },
         ],
       },
       {
-        id: "100",
-        parent_id: "1",
-        title: "Children 5",
+        id: "mutation",
+        title: "Mutation",
         children: [],
       },
     ],
   },
   {
-    id: "2",
-    parent_id: null,
-    title: "Parent 2",
+    id: "evolutionary-milestones",
+    title: "Evolutionary Milestones",
     children: [
       {
-        id: "10",
-        parent_id: "2",
-        title: "Children 1",
+        id: "origin-of-life",
+        title: "Origin of Life",
         children: [],
       },
       {
-        id: "11",
-        parent_id: "2",
-        title: "Children 2",
+        id: "evolution-of-humans",
+        title: "Evolution of Humans",
         children: [
           {
-            id: "15",
-            parent_id: "11",
-            title: "Grandchildren 1",
+            id: "hominid-evolution",
+            title: "Hominid Evolution",
             children: [],
           },
           {
-            id: "16",
-            parent_id: "11",
-            title: "Grandchildren 2",
+            id: "cultural-evolution",
+            title: "Cultural Evolution",
             children: [],
           },
         ],
@@ -81,14 +64,13 @@ const treeData: TreeNodeData[] = [
     ],
   },
 ];
-
 export default function Course({ params }: { params: { class: string[] } }) {
   return (
     <div>
       <h1 className="text-center text-3xl font-semibold">
         {params.class[0].toUpperCase()}
       </h1>
-      <ClassCards treeData={treeData} />
+      <TreeSkillCards treeData={treeData} />
     </div>
   );
 }
