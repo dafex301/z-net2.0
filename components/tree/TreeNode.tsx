@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-
+// components/TreeNode.tsx
 import { useRouter, usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export interface TreeNodeData {
   id: string;
@@ -12,30 +12,33 @@ export interface TreeNodeData {
 
 interface TreeNodeProps {
   node: TreeNodeData;
-  activeNode: TreeNodeData | null;
-  setActiveNode: (node: TreeNodeData) => void;
+  basePath: string;
 }
 
-const TreeNode: React.FC<TreeNodeProps> = ({
-  node,
-  activeNode,
-  setActiveNode,
-}) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const TreeNode: React.FC<TreeNodeProps> = ({ node, basePath }) => {
   const router = useRouter();
-  const pathname = usePathname();
+  const path = usePathname();
+  const [isOpen, setIsOpen] = useState(path.includes(node.id));
 
-  const isActive = activeNode?.id === node.id;
+  // extract the latest node id from the path
+  const pathParts = path.split("/");
+  const latestNodeId = pathParts[pathParts.length - 1];
+
+  const isActive = latestNodeId === node.id;
 
   const handleNodeClick = () => {
-    setActiveNode(node);
-    setIsOpen(!isOpen);
+    setTimeout(() => {
+      router.push(`${basePath}/${node.id}`);
+    }, 100);
+    if (!isOpen) {
+      setIsOpen(!isOpen);
+    }
   };
 
   return (
     <div>
       <div
-        className={`flex items-center p-2 rounded-xl justify-between cursor-pointer transition-colors duration-300 
+        className={`flex items-center p-1 px-3 rounded-full justify-between cursor-pointer transition-colors duration-100 
           ${
             isActive
               ? "bg-purple-500 text-yellow-400 font-semibold"
@@ -56,17 +59,13 @@ const TreeNode: React.FC<TreeNodeProps> = ({
         )}
       </div>
       <div
-        className={`overflow-hidden transition-max-height duration-200 ${
-          isOpen ? "max-h-[1000px]" : "max-h-0"
+        className={`transform transition-all duration-100 ease-in-out origin-top ${
+          isOpen ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0"
         }`}
       >
         {node.children.map((child) => (
           <div className="pl-4 border-l-2 border-gray-200" key={child.id}>
-            <TreeNode
-              node={child}
-              activeNode={activeNode}
-              setActiveNode={setActiveNode}
-            />
+            <TreeNode node={child} basePath={`${basePath}/${node.id}`} />
           </div>
         ))}
       </div>

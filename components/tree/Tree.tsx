@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import TreeNode, { TreeNodeData } from "./TreeNode";
+"use client";
+
+import { usePathname } from "next/navigation";
+// components/Tree.tsx
+import { TreeNodeData } from "./TreeNode";
+import TreeNode from "./TreeNode";
 
 interface TreeProps {
-  activeNode: TreeNodeData | null;
-  setActiveNode: (node: TreeNodeData) => void;
   data: TreeNodeData[];
 }
 
-const Tree: React.FC<TreeProps> = ({ data, activeNode, setActiveNode }) => {
+const Tree: React.FC<TreeProps> = ({ data }) => {
+  const path = usePathname();
+  const basePath = path.split("/").slice(0, 3).join("/");
+
   return (
-    <div className="p-4">
+    <div className="mt-2">
       {data.map((node) => (
-        <TreeNode
-          key={node.id}
-          node={node}
-          activeNode={activeNode}
-          setActiveNode={setActiveNode}
-        />
+        <TreeNode key={node.id} node={node} basePath={basePath} />
       ))}
     </div>
   );

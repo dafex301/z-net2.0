@@ -4,15 +4,13 @@ import ContentCard from "../card/SkillCard";
 // import Tree from "../tree/Tree";
 import { useState } from "react";
 import { TreeNodeData } from "../tree/TreeNode";
-import Tree from "../tree/Tree2";
+import Tree from "../tree/Tree";
 
 interface TreeSkillCardsProps {
   treeData: TreeNodeData[];
 }
 
 export default function TreeSkillCards({ treeData }: TreeSkillCardsProps) {
-  const [activeNode, setActiveNode] = useState<TreeNodeData | null>(null);
-
   return (
     <div className="grid grid-cols-12 gap-8 mt-5">
       <div className="col-span-3 bg-white rounded-2xl shadow-md p-8">
@@ -26,8 +24,8 @@ export default function TreeSkillCards({ treeData }: TreeSkillCardsProps) {
       </div>
       <div className="col-span-9 bg-white rounded-2xl shadow-md p-8">
         <ContentCard
-          title={activeNode?.title || "Pilih dulu skillnya di sebelah kiri boy"}
-          image={activeNode ? "/coding.jpg" : ""}
+          title={"Pilih dulu skillnya di sebelah kiri boy"}
+          image={"/gear-5.webp"}
         >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta rem,
           obcaecati temporibus veritatis, mollitia, reprehenderit aliquid porro
