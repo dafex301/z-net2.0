@@ -2,7 +2,7 @@ import ClassCard from "@/components/card/ClassCard";
 import { ClassData } from "@/interfaces/ClassData";
 
 async function getClasses(): Promise<ClassData[]> {
-  const res = await fetch("http://localhost:3000/api/classes");
+  const res = await fetch("/api/classes");
   const data = await res.json();
 
   return data;
