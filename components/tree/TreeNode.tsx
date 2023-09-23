@@ -24,9 +24,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, nodePath }) => {
     if (!isOpen) {
       setIsOpen(!isOpen);
     }
-    setTimeout(() => {
-      router.push(`${basePath}/${node.id}`);
-    }, 100);
+    router.push(`${basePath}/${node.id}`);
   };
 
   // close the node if the path doesn't include the node id
@@ -39,7 +37,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, nodePath }) => {
   return (
     <div>
       <div
-        className={`flex items-center p-1 px-3 rounded-full justify-between cursor-pointer transition-colors duration-100 
+        className={`flex items-center p-1 px-3 rounded-full justify-between cursor-pointer transition-colors duration-200  ease-in-out
           ${
             isActive
               ? "bg-purple-500 text-yellow-400 font-semibold"
@@ -60,8 +58,8 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, nodePath }) => {
         )}
       </div>
       <div
-        className={`transform transition-all duration-100 ease-in-out origin-top ${
-          isOpen ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0"
+        className={`transform transition-all duration-300 ease-in-out origin-top ${
+          isOpen ? "scale-x-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0 "
         }`}
       >
         {node.children.map((child) => (
