@@ -15,7 +15,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, nodePath }) => {
   const path = usePathname();
   const [isOpen, setIsOpen] = useState(nodePath && nodePath.includes(node.id));
   const pathParts = path.split("/");
-  const latestNodeId = pathParts[pathParts.length - 1];
+  const latestNodeId = pathParts[3];
   const basePath = pathParts.slice(0, 3).join("/");
 
   const isActive = latestNodeId === node.id;

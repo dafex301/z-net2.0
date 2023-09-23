@@ -11,7 +11,7 @@ export default async function ContentLayout({
   params, // will be a page or nested layout
 }: {
   children: React.ReactNode;
-  params: { class: string; skills: string[] };
+  params: { class: string };
 }) {
   const skills = await getData();
 
@@ -24,7 +24,7 @@ export default async function ContentLayout({
           </h2>
           <Tree data={skills} />
         </div>
-        <div className="grid grid-cols-12 col-span-9">{children}</div>
+        <div className="grid grid-cols-12 col-span-9 gap-8">{children}</div>
       </div>
     </>
   );

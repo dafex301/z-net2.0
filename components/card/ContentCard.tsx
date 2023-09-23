@@ -1,13 +1,16 @@
 import Image from "next/image";
-import RedirectButton from "../button/RedirectButton";
 
-interface SkillCardProps {
+interface ContentCardProps {
   title: string;
   children: React.ReactNode;
   image: string;
 }
 
-export default function SkillCard({ title, children, image }: SkillCardProps) {
+export default function ContentCard({
+  title,
+  children,
+  image,
+}: ContentCardProps) {
   return (
     <div className="space-y-4">
       <h3 className="text-2xl font-semibold text-purple-700">{title}</h3>
@@ -24,16 +27,6 @@ export default function SkillCard({ title, children, image }: SkillCardProps) {
         )}
       </div>
       <div className="text-justify">{children}</div>
-      <div className="flex gap-3">
-        <RedirectButton
-          title="Belajar"
-          href="/learn"
-          className="text-lg bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-full w-full"
-        />
-        <button className="text-lg bg-purple-600 hover:bg-purple-800 text-white py-3 rounded-full w-full">
-          Latihan
-        </button>
-      </div>
     </div>
   );
 }
