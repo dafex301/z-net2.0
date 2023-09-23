@@ -1,26 +1,22 @@
 "use client";
 
 // components/TreeNode.tsx
+import { TreeNodeData } from "@/interfaces/TreeNodeData";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
-export interface TreeNodeData {
-  id: string;
-  title: string;
-  children: TreeNodeData[];
-}
-
 interface TreeNodeProps {
   node: TreeNodeData;
-  basePath: string;
+  nodePath: string[] | null;
 }
 
-const TreeNode: React.FC<TreeNodeProps> = ({ node, basePath }) => {
+const TreeNode: React.FC<TreeNodeProps> = ({ node, nodePath }) => {
   const router = useRouter();
   const path = usePathname();
-  const [isOpen, setIsOpen] = useState(path.includes(node.id));
+  const [isOpen, setIsOpen] = useState(nodePath && nodePath.includes(node.id));
   const pathParts = path.split("/");
   const latestNodeId = pathParts[pathParts.length - 1];
+  const basePath = pathParts.slice(0, 3).join("/");
 
   const isActive = latestNodeId === node.id;
 
@@ -35,10 +31,10 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, basePath }) => {
 
   // close the node if the path doesn't include the node id
   useEffect(() => {
-    if (!path.includes(node.id)) {
+    if (nodePath && !nodePath.includes(node.id)) {
       setIsOpen(false);
     }
-  }, [path, node.id]);
+  }, [nodePath, node.id]);
 
   return (
     <div>
@@ -70,7 +66,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, basePath }) => {
       >
         {node.children.map((child) => (
           <div className="pl-4 border-l-2 border-gray-200" key={child.id}>
-            <TreeNode node={child} basePath={`${basePath}/${node.id}`} />
+            <TreeNode node={child} nodePath={nodePath} />
           </div>
         ))}
       </div>

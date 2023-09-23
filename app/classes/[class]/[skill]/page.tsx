@@ -1,8 +1,6 @@
 import SkillCard from "@/components/card/SkillCard";
 import skillDetails from "@/data/skillsDetail.json";
 import { ISkillDetail } from "@/interfaces/ISkillDetail";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 async function getData(id: string): Promise<ISkillDetail | undefined> {
   const data: ISkillDetail[] = skillDetails;
@@ -13,11 +11,10 @@ async function getData(id: string): Promise<ISkillDetail | undefined> {
 export default async function Class({
   params,
 }: {
-  params: { class: string; skills: string[] };
+  params: { class: string; skill: string };
 }) {
   // get the latest skills array
-  const skillId = params.skills[params.skills.length - 1];
-  const data = await getData(skillId);
+  const data = await getData(params.skill);
   return (
     <div className="col-span-12 bg-white rounded-2xl shadow-md p-8">
       {data && (
