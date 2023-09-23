@@ -5,7 +5,7 @@ export default function Class({ params }: { params: { class: string } }) {
     <div className="col-span-12 bg-white rounded-2xl shadow-md p-8">
       <div className=" space-y-4">
         <h3 className="text-2xl font-semibold text-purple-700">
-          Cie mo belajar buat {params.class.toUpperCase()} nih
+          Ciee mo belajar buat {params.class.toUpperCase()} nih, semangat yakk
         </h3>
         <div className="bg-purple-600 h-72 rounded-xl">
           <Image

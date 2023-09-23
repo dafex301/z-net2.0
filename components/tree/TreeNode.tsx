@@ -19,8 +19,6 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, basePath }) => {
   const router = useRouter();
   const path = usePathname();
   const [isOpen, setIsOpen] = useState(path.includes(node.id));
-
-  // extract the latest node id from the path
   const pathParts = path.split("/");
   const latestNodeId = pathParts[pathParts.length - 1];
 
@@ -34,6 +32,13 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, basePath }) => {
       setIsOpen(!isOpen);
     }
   };
+
+  // close the node if the path doesn't include the node id
+  useEffect(() => {
+    if (!path.includes(node.id)) {
+      setIsOpen(false);
+    }
+  }, [path, node.id]);
 
   return (
     <div>
