@@ -1,18 +1,24 @@
-import SkillCard from "@/components/card/SkillCard";
+import Image from "next/image";
 
 export default function Class({ params }: { params: { class: string } }) {
   return (
     <div className="col-span-12 bg-white rounded-2xl shadow-md p-8">
-      <SkillCard
-        title={"Pilih dulu skillnya di sebelah kiri boy"}
-        image={"/gear-5.webp"}
-      >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta rem,
-        obcaecati temporibus veritatis, mollitia, reprehenderit aliquid porro
-        eaque esse exercitationem totam beatae labore ipsum odit magni
-        accusantium quisquam dolorum quia eum illo! Natus adipisci error cum
-        odio ducimus vero amet.
-      </SkillCard>
+      <div className=" space-y-4">
+        <h3 className="text-2xl font-semibold text-purple-700">
+          Cie mo belajar buat {params.class.toUpperCase()} nih
+        </h3>
+        <div className="bg-purple-600 h-72 rounded-xl">
+          <Image
+            src={"/gear-5.webp"}
+            className="h-full w-full object-cover rounded-xl"
+            alt="illustration"
+            loading="lazy"
+            width={900}
+            height={600}
+          />
+        </div>
+        <div className="text-justify">Sok pilih skillnya di kiri dulu boy</div>
+      </div>
     </div>
   );
 }
