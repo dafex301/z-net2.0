@@ -30,7 +30,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, basePath }) => {
     if (path.includes(node.id)) {
       setIsOpen(true);
     }
-  }, [path]);
+  }, [path, node.id]);
 
   const handleNodeClick = () => {
     router.push(`${basePath}/${node.id}`);
