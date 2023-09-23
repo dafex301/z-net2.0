@@ -21,12 +21,12 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, nodePath }) => {
   const isActive = latestNodeId === node.id;
 
   const handleNodeClick = () => {
-    setTimeout(() => {
-      router.push(`${basePath}/${node.id}`);
-    }, 100);
     if (!isOpen) {
       setIsOpen(!isOpen);
     }
+    setTimeout(() => {
+      router.push(`${basePath}/${node.id}`);
+    }, 100);
   };
 
   // close the node if the path doesn't include the node id
