@@ -61,14 +61,14 @@ export default function Logo({
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             <g
               id="Artboard"
               transform="translate(-970.000000, -135.000000)"
-              fill-rule="nonzero"
+              fillRule="nonzero"
             >
               <g id="Group-16333" transform="translate(890.000000, 135.000000)">
                 <g id="Group_16128" transform="translate(79.782000, 0.000000)">

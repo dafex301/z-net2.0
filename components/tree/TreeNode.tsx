@@ -3,25 +3,25 @@
 import React, { useState } from "react";
 
 export interface TreeNodeData {
-  id: number;
+  id: string;
   title: string;
   children: TreeNodeData[];
 }
 
 interface TreeNodeProps {
   node: TreeNodeData;
-  activeNodeId: number | null;
-  setActiveNodeId: (id: number) => void;
+  activeNode: TreeNodeData | null;
+  setActiveNode: (node: TreeNodeData) => void;
 }
 
 const TreeNode: React.FC<TreeNodeProps> = ({
   node,
-  activeNodeId,
-  setActiveNodeId,
+  activeNode,
+  setActiveNode,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const isActive = node.id === activeNodeId;
+  const isActive = activeNode?.id === node.id;
 
   return (
     <div>
@@ -35,12 +35,18 @@ const TreeNode: React.FC<TreeNodeProps> = ({
         `}
         onClick={() => {
           setIsOpen(!isOpen);
-          setActiveNodeId(node.id);
+          setActiveNode(node);
         }}
       >
         <span>{node.title}</span>
         {node.children.length > 0 && (
-          <span className="ml-2">{isOpen ? "v" : ">"}</span>
+          <span
+            className={`ml-2 cursor-pointer transform transition-transform ${
+              isOpen ? "-rotate-90" : ""
+            }`}
+          >
+            v
+          </span>
         )}
       </div>
       <div
@@ -52,8 +58,8 @@ const TreeNode: React.FC<TreeNodeProps> = ({
           <div className="pl-4 border-l-2 border-gray-200" key={child.id}>
             <TreeNode
               node={child}
-              activeNodeId={activeNodeId}
-              setActiveNodeId={setActiveNodeId}
+              activeNode={activeNode}
+              setActiveNode={setActiveNode}
             />
           </div>
         ))}
