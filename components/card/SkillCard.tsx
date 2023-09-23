@@ -23,7 +23,7 @@ export default function SkillCard({ title, children, image }: SkillCardProps) {
             />
           )}
         </div>
-        <p className="text-justify">{children}</p>
+        <div className="text-justify">{children}</div>
         <div className="flex gap-3">
           <button className="text-lg bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-full w-full">
             Belajar
