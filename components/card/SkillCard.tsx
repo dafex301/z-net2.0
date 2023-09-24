@@ -4,7 +4,7 @@ import RedirectButton from "../button/RedirectButton";
 interface SkillCardProps {
   title: string;
   children: React.ReactNode;
-  image: string;
+  image?: string;
 }
 
 export default function SkillCard({ title, children, image }: SkillCardProps) {
@@ -30,9 +30,11 @@ export default function SkillCard({ title, children, image }: SkillCardProps) {
           href="/learn"
           className="text-lg bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-full w-full"
         />
-        <button className="text-lg bg-purple-600 hover:bg-purple-800 text-white py-3 rounded-full w-full">
-          Latihan
-        </button>
+        <RedirectButton
+          title="Latihan"
+          href="/practice"
+          className="text-lg bg-purple-600 hover:bg-purple-800 text-white py-3 rounded-full w-full"
+        />
       </div>
     </div>
   );

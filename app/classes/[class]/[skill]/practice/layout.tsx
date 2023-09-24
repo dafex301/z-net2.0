@@ -1,6 +1,6 @@
 import ContentListCard from "@/components/card/ContentListCard";
 
-export default async function LearnLayout({
+export default async function PracticeLayout({
   children,
   params, // will be a page or nested layout
 }: {
@@ -9,10 +9,7 @@ export default async function LearnLayout({
 }) {
   return (
     <>
-      <div className="col-span-3">
-        <ContentListCard />
-      </div>
-      <div className="col-span-9 ">{children}</div>
+      <div className="col-span-12">{children}</div>
     </>
   );
 }

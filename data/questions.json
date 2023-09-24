@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of the United States?",
+    "options": ["New York", "Washington D.C.", "Los Angeles", "Chicago"],
+    "answer": "Washington D.C."
+  },
+  {
+    "id": 2,
+    "question": "What is the capital of the United Kingdom?",
+    "options": ["London", "Manchester", "Liverpool", "Birmingham"],
+    "answer": "London"
+  },
+  {
+    "id": 3,
+    "question": "What is the capital of France?",
+    "options": ["Paris", "Marseille", "Lyon", "Toulouse"],
+    "answer": "Paris"
+  },
+  {
+    "id": 4,
+    "question": "What is the capital of Germany?",
+    "options": ["Berlin", "Hamburg", "Munich", "Cologne"],
+    "answer": "Berlin"
+  },
+  {
+    "id": 5,
+    "question": "What is the capital of Italy?",
+    "options": ["Rome", "Milan", "Naples", "Turin"],
+    "answer": "Rome"
+  },
+  {
+    "id": 6,
+    "question": "What is the capital of Spain?",
+    "options": ["Madrid", "Barcelona", "Valencia", "Seville"],
+    "answer": "Madrid"
+  },
+  {
+    "id": 7,
+    "question": "What is the capital of Portugal?",
+    "options": ["Lisbon", "Porto", "Coimbra", "Braga"],
+    "answer": "Lisbon"
+  },
+  {
+    "id": 8,
+    "question": "What is the capital of Poland?",
+    "options": ["Warsaw", "Krakow", "Wroclaw", "Poznan"],
+    "answer": "Warsaw"
+  },
+  {
+    "id": 9,
+    "question": "What is the capital of Russia?",
+    "options": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg"],
+    "answer": "Moscow"
+  },
+  {
+    "id": 10,
+    "question": "What is the capital of Turkey?",
+    "options": ["Ankara", "Istanbul", "Izmir", "Bursa"],
+    "answer": "Ankara"
+  }
+]
