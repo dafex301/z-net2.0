@@ -59,7 +59,7 @@ export default function PracticeCard() {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col gap-4">
+    <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col gap-4 transition-all">
       <div className="grid grid-cols-12 items-center gap-4">
         <div className="col-span-11 w-full bg-gray-200 rounded-full h-2.5 ">
           <div
@@ -112,7 +112,7 @@ export default function PracticeCard() {
           Udahan
         </button>
         <button
-          disabled={answer === ""}
+          disabled={result === undefined}
           onClick={handleNext}
           className="bg-purple-700 text-white rounded-full py-2 px-4 hover:bg-purple-800 transition-all
           disabled:bg-gray-400 disabled:cursor-not-allowed
