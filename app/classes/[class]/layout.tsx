@@ -18,11 +18,11 @@ export default async function ContentLayout({
   return (
     <>
       <div className="grid grid-cols-12 gap-8 mt-5">
-        <div className="col-span-3 bg-white rounded-2xl shadow-md p-8">
-          <h2 className="text-gray-700 font-semibold">
-            Skill List {params.class.toUpperCase()}
-          </h2>
-          <Tree data={skills} />
+        <div className="col-span-3">
+          <Tree
+            data={skills}
+            title={`Skill List ${params.class.toUpperCase()}`}
+          />
         </div>
         <div className="grid grid-cols-12 col-span-9 gap-8">{children}</div>
       </div>

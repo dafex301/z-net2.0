@@ -11,9 +11,11 @@ interface TreeNodeProps {
 }
 
 const TreeNode: React.FC<TreeNodeProps> = ({ node, nodePath }) => {
+  const [isOpen, setIsOpen] = useState(nodePath && nodePath.includes(node.id));
+
   const router = useRouter();
   const path = usePathname();
-  const [isOpen, setIsOpen] = useState(nodePath && nodePath.includes(node.id));
+
   const pathParts = path.split("/");
   const latestNodeId = pathParts[3];
   const basePath = pathParts.slice(0, 3).join("/");

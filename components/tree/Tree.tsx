@@ -7,9 +7,10 @@ import findPath from "@/utils/tree/findPath";
 
 interface TreeProps {
   data: TreeNodeData[];
+  title?: string;
 }
 
-const Tree: React.FC<TreeProps> = ({ data }) => {
+const Tree: React.FC<TreeProps> = ({ data, title }) => {
   const path = usePathname();
 
   // Get the 3rd index of the path
@@ -21,7 +22,8 @@ const Tree: React.FC<TreeProps> = ({ data }) => {
     : null;
 
   return (
-    <div className="mt-2">
+    <div className="bg-white rounded-2xl shadow-md p-8">
+      <h2 className="text-gray-700 font-semibold mb-2">{title}</h2>
       {data.map((node) => (
         <TreeNode key={node.id} node={node} nodePath={nodePath} />
       ))}
