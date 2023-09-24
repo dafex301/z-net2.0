@@ -63,7 +63,7 @@ export default function PracticeCard() {
       <div className="grid grid-cols-12 items-center gap-4">
         <div className="col-span-11 w-full bg-gray-200 rounded-full h-2.5 ">
           <div
-            className="bg-purple-600 h-2.5 rounded-full "
+            className="bg-purple-600 h-2.5 rounded-full transition-all duration-500"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
