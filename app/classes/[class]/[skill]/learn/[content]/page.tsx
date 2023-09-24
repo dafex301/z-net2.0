@@ -1,23 +1,25 @@
 import ContentCard from "@/components/card/ContentCard";
 import ContentListCard from "@/components/card/ContentListCard";
+import ContentDetailData from "@/data/contentDetail.json";
 
 export default async function Learn({
   params,
 }: {
-  params: { class: string; skill: string };
+  params: { class: string; skill: string; content: string };
 }) {
-  // get the latest skills array
-  // const data = await getData(params.skill);
+  const data = ContentDetailData.find(
+    (content) => content.id === params.content
+  );
+
   return (
     <>
-      <div className="col-span-3">
-        <ContentListCard />
-      </div>
-      <div className="col-span-9 ">
-        <ContentCard title={"Dikit lagi nemu one piece"} image={"/nakama.webp"}>
-          Pilih dulu kontennya di sebelah yak
-        </ContentCard>
-      </div>
+      <ContentCard title={data!.title}>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data!.description,
+          }}
+        ></div>
+      </ContentCard>
     </>
   );
 }

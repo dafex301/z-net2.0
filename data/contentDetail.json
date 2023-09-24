@@ -1,0 +1,17 @@
+[
+  {
+    "id": "python-syntax",
+    "title": "Python Syntax",
+    "description": "<p><strong>Python Syntax</strong> is a fundamental learning material that covers the basic syntax rules of Python programming language. It is crucial for beginners to understand how to properly structure their Python code, so that it can be executed without errors.</p><ul><li>Learn the importance of indentation in Python.</li><li>Understand how to declare variables and assign values.</li><li>Study the syntax for creating functions, classes, and modules.</li><li>Get to know the conventions for writing readable and clean Python code.</li></ul>"
+  },
+  {
+    "id": "conditional-if-else",
+    "title": "Conditional If-Else",
+    "description": "<p><strong>Conditional If-Else</strong> material is designed to provide an in-depth understanding of conditional statements in Python, allowing the execution of code based on whether a given condition is true or false.</p><ul><li>Learn how to use <code>if</code>, <code>elif</code>, and <code>else</code> statements to control the flow of a program.</li><li>Study how to create complex conditions using logical operators.</li><li>Explore real-world examples and scenarios where conditional statements are crucial.</li><li>Practice with exercises to strengthen understanding and gain confidence.</li></ul>"
+  },
+  {
+    "id": "for-loop",
+    "title": "For Loop",
+    "description": "<p><strong>For Loop</strong> learning material focuses on one of the most widely used loop constructs in Python. This material is essential for iterating over sequences such as lists, tuples, and strings, allowing the execution of code multiple times.</p><ul><li>Understand the basic structure and syntax of <code>for</code> loops in Python.</li><li>Learn how to use <code>break</code> and <code>continue</code> statements to control loop execution.</li><li>Explore nested loops and learn how they can be used to solve complex problems.</li><li>Work on various examples and exercises to apply the knowledge practically.</li></ul>"
+  }
+]

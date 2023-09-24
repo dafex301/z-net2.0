@@ -3,7 +3,7 @@ import Image from "next/image";
 interface ContentCardProps {
   title: string;
   children: React.ReactNode;
-  image: string;
+  image?: string;
 }
 
 export default function ContentCard({
