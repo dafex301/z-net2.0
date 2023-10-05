@@ -1,6 +1,7 @@
 import Logo from "@/components/Logo";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import Name from "./Name";
 
 export default function Header() {
   return (
@@ -10,6 +11,10 @@ export default function Header() {
       </Link>
       <NavLink href="/">Beranda</NavLink>
       <NavLink href="/classes">Kelas</NavLink>
+      <NavLink href="/recoil">Recoil Playground</NavLink>
+      <div className="flex-1 flex justify-end">
+        <Name />
+      </div>
     </div>
   );
 }
